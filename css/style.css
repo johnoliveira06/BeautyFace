@@ -20,6 +20,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 25px;
 }
 .header-logo a{
     color: black;
@@ -32,3 +33,38 @@ img {
 .header-nav li{
     margin-right: 15px;
 }
+.banner{
+    margin-bottom: 15px;
+}
+.produtos-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+}
+.produtos-info h2{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.lista-produtos{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-gap: 60px;
+    justify-content: center;
+    margin: 60px 0px;
+    margin-left: 75px;
+}
+
+  .produtos-item {
+    max-width: 270px;
+    margin-bottom: 30px;
+  }
+  
+  .produtos-item img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 270px;
+    height: 270px;
+    border-radius: 5px;
+  }
