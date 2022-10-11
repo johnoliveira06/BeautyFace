@@ -1,110 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <!-- General meta tags needed-->
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- Needed for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>SelfCare</title>
-    <!-- Google Fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Beauty Face</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/script.js"></script>
+
   </head>
   <body>
     <header class="header">
-      <div class="header-logo">
-        <img src="./app/assets/icons/logo.svg" alt="SelfCare" />
-      </div>
-      <nav class="header-nav">
+      <nav class="navbar navbar-light header-logo">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/icons/star.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+          <a>Beauty Face</a>
+        </a>
+      </nav>
+      <div class="header-nav">
         <ul>
           <li>
-            <a href="#"><img src="./app/assets/icons/search.svg" alt="Search" /></a>
+            <a href="#"><img src="./assets/icons/search.svg" alt="Search" /></a>
           </li>
           <li>
-            <a href="#"><img src="./app/assets/icons/login.svg" alt="Login" /></a>
+            <a href="#"><img src="./assets/icons/login.svg" alt="Login" /></a>
           </li>
           <li>
-            <a href="#"><img src="./app/assets/icons/cart.svg" alt="Cart" /></a>
+            <a href="#"><img src="./assets/icons/cart.svg" alt="Cart" /></a>
           </li>
         </ul>
-      </nav>
+      </div>
     </header>
     <section class="banner">
-      <img src="./app/assets/banner.png" alt="SelfCare Banner" />
+      <img src="./assets/images/banner.jpg" alt="Banner" />
     </section>
-    <section class="products">
-      <div class="products-header">
-        <div class="products-info">
+    <section class="produtos">
+      <div class="produtos-header">
+        <div class="produtos-info">
           <h2>Promoção</h2>
           <p>9 produtos</p>
         </div>
       </div>
-      <div class="products-list">
-        <div class="products-item">
+      <div class="lista-produtos">
+        <div class="produtos-item">
           <img
-            src="./app/assets/products/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg"
+            src="./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg"
             alt="Produto 1"
           />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+          <p>Sabonete</p>
+          <div class="products-price">R$ <span>20, 00</span></div>
         </div>
-        <div class="products-item">
-          <img src="./app/assets/products/devin-avery-bMH8ub9z1_U-unsplash.jpg" alt="Produto 2" />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+        <div class="produtos-item">
+          <img src="./assets/images/devin-avery-bMH8ub9z1_U-unsplash.jpg" alt="Produto 2" />
+          <p>Shampoo</p>
+          <div class="products-price">R$ <span>15, 00</span></div>
         </div>
-        <div class="products-item">
-          <img src="./app/assets/products/devin-avery-BRVqq2uak4E-unsplash.jpg" alt="Produto 3" />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+        <div class="produtos-item">
+          <img src="./assets/images/devin-avery-BRVqq2uak4E-unsplash.jpg" alt="Produto 3" />
+          <p>Kit Shampoo</p>
+          <div class="products-price">R$ <span>30, 00</span></div>
         </div>
-        <div class="products-item">
+        <div class="produtos-item">
           <img
-            src="./app/assets/products/gabrielle-henderson-1DMNn6gBbwQ-unsplash.jpg"
+            src="./assets/images/gabrielle-henderson-1DMNn6gBbwQ-unsplash.jpg"
             alt="Produto 4"
           />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+          <p>Shampoo</p>
+          <div class="products-price">R$ <span>20, 00</span></div>
         </div>
-        <div class="products-item">
+        <div class="produtos-item">
           <img
-            src="./app/assets/products/nery-montenegro-SmEty_TVr80-unsplash.jpg"
+            src="./assets/images/nery-montenegro-SmEty_TVr80-unsplash.jpg"
             alt="Produto 5"
           />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+          <p>Creme Facial</p>
+          <div class="products-price">R$ <span>25, 00</span></div>
         </div>
-        <div class="products-item">
+        <div class="produtos-item">
           <img
-            src="./app/assets/products/olena-sergienko-GOVTETevRm8-unsplash.jpg"
+            src="./assets/images/olena-sergienko-GOVTETevRm8-unsplash.jpg"
             alt="Produto 6"
           />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+          <p>Perfume</p>
+          <div class="products-price">R$ <span>80, 00</span></div>
         </div>
-        <div class="products-item">
+        <div class="produtos-item">
           <img
-            src="./app/assets/products/phaedra-botanicals-uFAHrKYkTVI-unsplash.jpg"
+            src="./assets/images/phaedra-botanicals-uFAHrKYkTVI-unsplash.jpg"
             alt="Produto 7"
           />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+          <p>Protetor Solar</p>
+          <div class="products-price">R$ <span>35, 00</span></div>
         </div>
-        <div class="products-item">
+        <div class="produtos-item">
           <img
-            src="./app/assets/products/pharma-hemp-complex-tAzdKblAinw-unsplash.jpg"
+            src="./assets/images/pharma-hemp-complex-tAzdKblAinw-unsplash.jpg"
             alt="Produto 8"
           />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+          <p>Kit Creme</p>
+          <div class="products-price">R$ <span>70, 00</span></div>
         </div>
-        <div class="products-item">
-          <img src="./app/assets/products/chandra-oh-y5hRv6UNKMg-unsplash.jpg" alt="Produto 9" />
-          <p>Lorem ipsum dolor sit</p>
-          <div class="products-price">R$ <span>50, 00</span></div>
+        <div class="produtos-item">
+          <img src="./assets/images/chandra-oh-y5hRv6UNKMg-unsplash.jpg" alt="Produto 9" />
+          <p>Anti Rugas</p>
+          <div class="products-price">R$ <span>40, 00</span></div>
         </div>
       </div>
     </section>
@@ -131,23 +137,23 @@
       <div class="social">
         <ul>
           <li>
-            <a href="#"><img src="./app/assets/icons/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="./assets/icons/instagram.svg" alt="Instagram" /></a>
           </li>
           <li>
-            <a href="#"><img src="./app/assets/icons/facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook" /></a>
           </li>
         </ul>
       </div>
       <div class="pagamento">
         <ul>
           <li>
-            <a href="#"><img src="./app/assets/icons/mastercard.svg" alt="Mastercard" /></a>
+            <a href="#"><img src="./assets/icons/mastercard.svg" alt="Mastercard" /></a>
           </li>
           <li>
-            <a href="#"><img src="./app/assets/icons/paypal.svg" alt="Paypal" /></a>
+            <a href="#"><img src="./assets/icons/paypal.svg" alt="Paypal" /></a>
           </li>
           <li>
-            <a href="#"><img src="./app/assets/icons/visa.svg" alt="Visa" /></a>
+            <a href="#"><img src="./assets/icons/visa.svg" alt="Visa" /></a>
           </li>
         </ul>
       </div>
