@@ -89,4 +89,16 @@ img {
     font-size: 15px;
     margin-top: 15px;
   }
+
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 25px 30px;
+  }
   
+  .footer ul li {
+    display: inline-block;
+    margin: 15px;
+  }
