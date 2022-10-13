@@ -68,3 +68,25 @@ img {
     height: 270px;
     border-radius: 5px;
   }
+
+  .newsletter {
+    background-color: #f9f9f9;
+
+  }
+  .newsletter-conteudo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+
+  }
+  .newsletter-links{
+    margin-right: 45px;
+  }
+  .newsletter-links a {
+    color: black;
+    font-weight: 550;
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  
