@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 ul, li {
@@ -59,6 +61,16 @@ img {
   .produtos-item {
     max-width: 270px;
     margin-bottom: 30px;
+    
+  }
+  .produtos-item a{
+    color: black;
+    text-decoration: none;
+  }
+  .produtos-item p{
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 550;
   }
   
   .produtos-item img {
@@ -67,18 +79,33 @@ img {
     width: 270px;
     height: 270px;
     border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 15px;
+  }
+  .produtos-item img:hover {
+    transition: all 0.3s ease-in-out;
+    transform:scale(1.1)
+  }
+
+  .produtos-preco{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .produtos-preco span{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #5CA720
   }
 
   .newsletter {
     background-color: #f9f9f9;
-
   }
+
   .newsletter-conteudo{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px;
-
   }
   .newsletter-links{
     margin-right: 45px;
@@ -88,6 +115,11 @@ img {
     font-weight: 550;
     font-size: 15px;
     margin-top: 15px;
+  }
+  .newsletter-conteudo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-gap: 60px;
   }
 
   .footer{
