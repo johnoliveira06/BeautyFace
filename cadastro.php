@@ -53,15 +53,14 @@
       </header>
     <div class="cadastro-form">
         <form method="POST" action="insert.php">
-          <fieldset>
             <div class="form-group">
                 <label >Nome Completo</label>
-                <input id="nome" name="nome" type="text" placeholder="Nome" class="form-control">
+                <input id="nome" name="nome" type="text" placeholder="Nome" class="form-control" autocomplete="off">
             </div>
             <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Email</label>
-                <input id="email" name="email" type="email" class="form-control" placeholder="Email">
+                <input id="email" name="email" type="email" class="form-control" placeholder="Email" autocomplete="off">
             </div>
             <div class="form-group col-md-6">
                 <label>Senha</label>
@@ -71,10 +70,9 @@
 
             <div class="form-group">
                 <label>Cidade</label>
-                <input id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control">
+                <input id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control" autocomplete="off">
             </div>
             <input id="submit" type="submit" name="submit" value="Cadastrar">
-            </fieldset>
             <div>
               <a href="login.php">Já possui conta? Faça login</a>
             </div>
@@ -82,65 +80,3 @@
     </div>
 </body>
 </html>
-
-<!-- <?php
-include_once ('connect.php');
-
-$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
-
-// if(empty($dados['nome'])){
-//   echo "<script>alert('Nome não pode ser vazio!')
-//   window.location.href = 'cadastro.php'
-//   </script>";
-// }
-// elseif(empty($dados['email'])){
-//   echo"<script> alert('E-mail não pode ser vazio!');
-//   window.location.href='cadastro.php';
-//   </script>";
-// }
-// elseif(empty($dados['senha'])){
-//   echo"<script> alert('Senha não pode ser vazio!');
-//   window.location.href='cadastro.php';
-//   </script>";
-// }
-// elseif(empty($dados['cidade'])){
-//   echo"<script> alert('Cidade não pode ser vazio!');
-//   window.location.href='cadastro.php';
-//   </script>";
-// }
-// else{
-//   $query_consulta = "SELECT id FROM users WHERE email=:email LIMIT 1";
-//   $result_consulta = $conn->prepare($query_consulta);
-//   $result_consulta->bindParam(':email', $dados['email'], PDO::PARAM_STR);
-//   $result_consulta->execute();
-
-//   if(($result_consulta) and ($result_consulta->rowCount() !=0)){
-//       echo"<script> alert('E-mail já cadastrado, tente outro!');
-//       window.location.href='cadastro.php';
-//       </script>";
-//   }
-
-  $sql = "INSERT INTO users(nome,email,senha,cidade) VALUES ('nome', 'email', 'senha', 'cidade')";
-
-  $cadastro = $connection->prepare($sql);
-
-  $cadastro->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
-  $cadastro->bindParam(':email', $dados['email'], PDO::PARAM_STR);
-  $cadastro->bindParam(':senha', $dados['senha'], PDO::PARAM_STR);
-  $cadastro->bindParam(':senha', $dados['senha'], PDO::PARAM_STR);
-  $cadastro->bindParam(':cidade', $dados['cidade'], PDO::PARAM_STR);
-
-  $cadastro->execute();
-
-  if($cadastro->rowCount()){
-    echo"<script> alert('Usuário cadastrado com sucesso!');
-    window.location.href='cadastro.php';
-    </script>";
-    }else{
-        echo"<script> alert('Não foi possivél realizar o cadastro');
-    window.location.href='cadastro.php';
-    </script>";
-    }
-
-?> -->
