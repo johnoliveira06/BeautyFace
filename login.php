@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,14 +51,14 @@
         </div>
       </header>
 
-      <form class="login-form">
+      <form class="login-form" method="POST" action="loginValidate.php">
   <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+    <label>Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    <label>Senha</label>
+    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
   </div>
   <input id="submit" type="submit" name="submit" value="Login">
 </form>
