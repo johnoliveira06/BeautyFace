@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+img {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+.header-logo a{
+    color: black;
+    font-size: 22px;
+    text-decoration: none;
+}
+.header-nav ul{
+    display: flex;
+}
+.header-nav li{
+    margin-right: 15px;
+}
+.banner{
+    margin-bottom: 15px;
+}
+.produtos-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+}
+.produtos-info h2{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.lista-produtos{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-gap: 60px;
+    justify-content: center;
+    margin: 60px 0px;
+    margin-left: 75px;
+}
+
+  .produtos-item {
+    max-width: 270px;
+    margin-bottom: 30px;
+    
+  }
+  .produtos-item a{
+    color: black;
+    text-decoration: none;
+  }
+  .produtos-item p{
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 550;
+  }
+  
+  .produtos-item img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 270px;
+    height: 270px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 15px;
+  }
+  .produtos-item img:hover {
+    transition: all 0.3s ease-in-out;
+    transform:scale(1.1)
+  }
+
+  .produtos-preco{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .produtos-preco span{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #5CA720
+  }
+
+  .newsletter {
+    background-color: #f9f9f9;
+  }
+
+  .newsletter-conteudo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+  }
+  .newsletter-links{
+    margin-right: 45px;
+  }
+  .newsletter-links a {
+    color: black;
+    font-weight: 550;
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  .newsletter-conteudo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-gap: 60px;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 25px 30px;
+  }
+  
+  .footer ul li {
+    display: inline-block;
+    margin: 15px;
+  }
+
+  .modais img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  .modais p{
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 550;
+  }
