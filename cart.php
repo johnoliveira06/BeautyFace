@@ -12,20 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/login.css">
 
-    <style>
-      #submit{
-    background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
-    width: 100%;
-    border: none;
-    padding: 15px;
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-    border-radius: 10px;
-}
-    </style>
 
 </head>
 <body>
@@ -42,26 +29,14 @@
               <a href="#"><img src="./assets/icons/search.svg" alt="Search" /></a>
             </li>
             <li>
-              <a href="#"><img src="./assets/icons/login.svg" alt="Login" /></a>
+              <a href="./cadastro.php"><img src="./assets/icons/login.svg" alt="Login" /></a>
             </li>
             <li>
-              <a href="#"><img src="./assets/icons/cart.svg" alt="Cart" /></a>
+              <a href="./carrinho.php"><img src="./assets/icons/cart.svg" alt="Cart" /></a>
             </li>
           </ul>
         </div>
       </header>
-
-      <form class="login-form" method="POST" action="loginValidate.php">
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off">
-  </div>
-  <div class="form-group">
-    <label>Senha</label>
-    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" autocomplete="off">
-  </div>
-  <input id="submit" type="submit" name="submit" value="Login">
-</form>
 
 </body>
 </html>

@@ -31,7 +31,7 @@
             <a href="./cadastro.php"><img src="./assets/icons/login.svg" alt="Login" /></a>
           </li>
           <li>
-            <a href="#"><img src="./assets/icons/cart.svg" alt="Cart" /></a>
+            <a href="./cart.php"><img src="./assets/icons/cart.svg" alt="Cart" /></a>
           </li>
         </ul>
       </div>
