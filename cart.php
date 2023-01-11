@@ -37,6 +37,51 @@
           </ul>
         </div>
       </header>
+      <div class="lista-produtos">
+      <div class="produtos-item">
+          <img
+            src="./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg"
+            alt="Produto 1"
+          />
+          <a href="#" data-toggle="modal" data-target="#produto1">
+          <p>Sabonete</p>
+          <div>
+            <label for="quantity"><strong>Quantidade:</strong></label>
+            <input type="number" id="quantity" name="quantity" min="1" max="50" step="1" value="3">
+          </div>
+          <div class="produtos-preco">R$ <span>20, 00</span></div>
+          </a>
+        </div>
+
+        <div class="produtos-item">
+          <img
+            src="./assets/images/nery-montenegro-SmEty_TVr80-unsplash.jpg"
+            alt="Produto 5"
+          />
+          <a href="#" data-toggle="modal" data-target="#produto5">
+          <p>Creme Facial</p>
+          <div>
+            <label for="quantity"><strong>Quantidade:</strong></label>
+            <input type="number" id="quantity" name="quantity" min="1" max="50" step="1" value="1">
+          </div>
+          <div class="produtos-preco">R$ <span>25, 00</span></div>
+        </a>
+        </div>
+        <div>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantidade
+            <span><strong>4</strong></span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Valor total:
+            <span ><strong>R$ 85,00</strong></span>
+          </li>
+          <button type="button" class="btn btn-success">Finalizar compra</button>
+          </li>
+        </ul>
+        </div>
+</div>
 
 </body>
 </html>
