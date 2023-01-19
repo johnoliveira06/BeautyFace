@@ -48,9 +48,6 @@
         <?php
 
         include_once('connect.php');
-        if(isset($_GET['id'])){
-          $productId = $_GET['id'];
-        }
         $select = "SELECT * FROM `produtos`";
         $result = mysqli_query($connection, $select);
         while($row = mysqli_fetch_assoc($result)){
