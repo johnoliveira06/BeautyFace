@@ -41,114 +41,36 @@
         <div class="produtos-info">
           <h2>PROMOÇÃO</h2>
           <p>9 produtos</p>
+          
         </div>
       </div>
       <div class="lista-produtos">
         <?php
+
         include_once('connect.php');
+        if(isset($_GET['id'])){
+          $productId = $_GET['id'];
+        }
         $select = "SELECT * FROM `produtos`";
         $result = mysqli_query($connection, $select);
         while($row = mysqli_fetch_assoc($result)){
+          $product_id = $row['id'];
           $product_name=$row['nome'];
           $product_price=$row['preco'];
-
-          // echo $product_name;
 
           echo "<div class='produtos-item'>
           <img
             src='./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg'
             alt='Produto'
           />
-          <a href='#' data-toggle='modal' data-target='#produto1'>
-          <p>$product_name</p>
-          <div class='produtos-preco'>R$ <span>$product_price</span></div>
-          </a>
+          <p name='nome'>$product_name</p>
+          <div class='produtos-preco' name='preco'>R$ <span>$product_price</span></div>
+          <form method='POST' action='insert_cart.php'>
+          <button type='submit' class='btn btn-outline-primary' >Adicionar ao carrinho</button>
+          </form>
         </div>";
-        }
-        echo $row['nome'];
+      }
         ?>
-        <!-- <div class="produtos-item">
-          <img
-            src="./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg"
-            alt="Produto 1"
-          />
-          <a href="#" data-toggle="modal" data-target="#produto1">
-          <p>Sabonete</p>
-          <div class="produtos-preco">R$ <span>20, 00</span></div>
-          </a>
-        </div>
-        <div class="produtos-item">
-          <img src="./assets/images/devin-avery-bMH8ub9z1_U-unsplash.jpg" alt="Produto 2" />
-          <a href="#" data-toggle="modal" data-target="#produto2">
-          <p>Shampoo</p>
-          <div class="produtos-preco">R$ <span>15, 00</span></div>
-        </a>
-        </div>
-        <div class="produtos-item">
-          <img src="./assets/images/devin-avery-BRVqq2uak4E-unsplash.jpg" alt="Produto 3" />
-          <a href="#" data-toggle="modal" data-target="#produto3">
-          <p>Kit Shampoo</p>
-          <div class="produtos-preco">R$ <span>30, 00</span></div>
-        </a>
-        </div>
-        <div class="produtos-item">
-          <img
-            src="./assets/images/gabrielle-henderson-1DMNn6gBbwQ-unsplash.jpg"
-            alt="Produto 4"
-          />
-          <a href="#" data-toggle="modal" data-target="#produto4">
-          <p>Shampoo</p>
-          <div class="produtos-preco">R$ <span>20, 00</span></div>
-        </a>
-        </div>
-        <div class="produtos-item">
-          <img
-            src="./assets/images/nery-montenegro-SmEty_TVr80-unsplash.jpg"
-            alt="Produto 5"
-          />
-          <a href="#" data-toggle="modal" data-target="#produto5">
-          <p>Creme Facial</p>
-          <div class="produtos-preco">R$ <span>25, 00</span></div>
-        </a>
-        </div>
-        <div class="produtos-item">
-          <img
-            src="./assets/images/olena-sergienko-GOVTETevRm8-unsplash.jpg"
-            alt="Produto 6"
-          />
-          <a href="#" data-toggle="modal" data-target="#produto6">
-          <p>Perfume</p>
-          <div class="produtos-preco">R$ <span>80, 00</span></div>
-        </a>
-        </div>
-        <div class="produtos-item">
-          <img
-            src="./assets/images/phaedra-botanicals-uFAHrKYkTVI-unsplash.jpg"
-            alt="Produto 7"
-          />
-          <a href="#" data-toggle="modal" data-target="#produto7">
-          <p>Protetor Solar</p>
-          <div class="produtos-preco">R$ <span>35, 00</span></div>
-        </a>
-        </div>
-        <div class="produtos-item">
-          <img
-            src="./assets/images/pharma-hemp-complex-tAzdKblAinw-unsplash.jpg"
-            alt="Produto 8"
-          />
-          <a href="#" data-toggle="modal" data-target="#produto8">
-          <p>Kit Creme</p>
-          <div class="produtos-preco">R$ <span>70, 00</span></div>
-        </a>
-        </div>
-        <div class="produtos-item">
-          <img src="./assets/images/chandra-oh-y5hRv6UNKMg-unsplash.jpg" alt="Produto 9" />
-          <a href="#" data-toggle="modal" data-target="#produto9">
-          <p>Anti Rugas</p>
-          <div class="produtos-preco">R$ <span>40, 00</span></div>
-        </a>
-        </div>
-      </div> -->
     </section>
     <section class="newsletter">
       <div class="newsletter-conteudo">
@@ -196,226 +118,6 @@
         </ul>
       </div>
     </footer>
-
-    <div class="modais">
-    <div class="modal fade" id="produto1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Sabonete</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-        <img
-          src="./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg"
-          alt="Produto 1"
-          class="asas"
-            />
-            <p>Sabonete</p>
-    <div class="produtos-preco">R$ <span>20, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Shampoo</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="./assets/images/devin-avery-bMH8ub9z1_U-unsplash.jpg" alt="Produto 2" />
-            <p>Shampoo</p>
-            <div class="produtos-preco">R$ <span>15, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Kit Shampoo</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="./assets/images/devin-avery-BRVqq2uak4E-unsplash.jpg" alt="Produto 3" />
-          <p>Kit Shampoo</p>
-          <div class="produtos-preco">R$ <span>30, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Shampoo</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img
-            src="./assets/images/gabrielle-henderson-1DMNn6gBbwQ-unsplash.jpg"
-            alt="Produto 4"
-          />
-          <p>Shampoo</p>
-          <div class="produtos-preco">R$ <span>20, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Creme Facial</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img
-            src="./assets/images/nery-montenegro-SmEty_TVr80-unsplash.jpg"
-            alt="Produto 5"
-          />
-          <p>Creme Facial</p>
-          <div class="produtos-preco">R$ <span>25, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Perfume</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img
-            src="./assets/images/olena-sergienko-GOVTETevRm8-unsplash.jpg"
-            alt="Produto 6"
-          />
-          <p>Perfume</p>
-          <div class="produtos-preco">R$ <span>80, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Protetor Solar</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img
-            src="./assets/images/phaedra-botanicals-uFAHrKYkTVI-unsplash.jpg"
-            alt="Produto 7"
-          />
-          <p>Protetor Solar</p>
-          <div class="produtos-preco">R$ <span>35, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Kit Creme</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img
-            src="./assets/images/pharma-hemp-complex-tAzdKblAinw-unsplash.jpg"
-            alt="Produto 8"
-          />
-          <p>Kit Creme</p>
-          <div class="produtos-preco">R$ <span>70, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="produto9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Anti Rugas</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="./assets/images/chandra-oh-y5hRv6UNKMg-unsplash.jpg" alt="Produto 9" />
-            <p>Anti Rugas</p>
-            <div class="produtos-preco">R$ <span>40, 00</span></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
 
   </body>
 </html>
