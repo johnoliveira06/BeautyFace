@@ -44,26 +44,30 @@
           
         </div>
       </div>
+      <!-- <input id='submit' type='submit' name='submit' value='Cadastrar'> -->
+      
       <div class="lista-produtos">
         <?php
 
-        include_once('connect.php');
-        $select = "SELECT * FROM `produtos`";
+include_once('connect.php');
+$select = "SELECT * FROM `produtos`";
         $result = mysqli_query($connection, $select);
         while($row = mysqli_fetch_assoc($result)){
           $product_id = $row['id'];
           $product_name=$row['nome'];
           $product_price=$row['preco'];
-
+          
           echo "<div class='produtos-item'>
-          <img
-            src='./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg'
-            alt='Produto'
-          />
-          <p name='nome'>$product_name</p>
-          <div class='produtos-preco' name='preco'>R$ <span>$product_price</span></div>
           <form method='POST' action='insert_cart.php'>
-          <button type='submit' class='btn btn-outline-primary' >Adicionar ao carrinho</button>
+          <img
+          src='./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg'
+          alt='Produto'
+          />
+          <p>$product_name</p>
+          <input id='nome' name='nome' type='hidden' value='$product_name'>
+          <div class='produtos-preco' id='preco' name='preco'>R$ <span>$product_price</span></div>
+          <input class='produtos-preco' id='preco' name='preco' type='hidden' value='$product_price'>
+          <button type='submit' name='submit' class='btn btn-outline-primary' >Adicionar ao carrinho</button>
           </form>
         </div>";
       }

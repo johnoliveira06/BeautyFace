@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
-
 </head>
 <body>
 <header class="header">
@@ -34,59 +33,67 @@
           </ul>
         </div>
       </header>
-      <div class="lista-produtos">
-      <div class="produtos-item">
-          <img
-            src="./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg"
-            alt="Produto 1"
-          />
-          <a href="#" data-toggle="modal" data-target="#produto1">
-          <p>Sabonete</p>
-          <div>
-            <label for="quantity"><strong>Quantidade:</strong></label>
-            <input type="number" id="quantity" name="quantity" min="1" max="50" step="1" value="3">
-          </div>
-          <div class="produtos-preco">R$ <span>20, 00</span></div>
-          </a>
-        </div>
+      <div class="all" style="
+    display: flex;
+    justify-content: space-between;">
+    <div class="lista-produtos">
 
-        <div class="produtos-item">
+      <?php
+      include_once('connect.php');
+        $select = "SELECT * FROM `cart`";
+        $result = mysqli_query($connection, $select);
+        while($row = mysqli_fetch_assoc($result)){
+          $product_id = $row['id'];
+          $product_name=$row['nome'];
+          $product_price=$row['preco'];
+          
+          echo "<div class='produtos-item'>
           <img
-            src="./assets/images/nery-montenegro-SmEty_TVr80-unsplash.jpg"
-            alt="Produto 5"
+          src='./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg'
+          alt='Produto'
           />
-          <a href="#" data-toggle="modal" data-target="#produto5">
-          <p>Creme Facial</p>
+          <p>$product_name</p>
           <div>
-            <label for="quantity"><strong>Quantidade:</strong></label>
-            <input type="number" id="quantity" name="quantity" min="1" max="50" step="1" value="1">
-          </div>
-          <div class="produtos-preco">R$ <span>25, 00</span></div>
-        </a>
+          <label for='quantity'><strong>Quantidade:</strong></label>
+          <input type='number' id='quantity' name='quantity' min='1' max='50' step='1' value='1'>
         </div>
-        <div>
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantidade de itens:
-            <span><strong>4</strong></span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Valor total:
-            <span ><strong>R$ 85,00</strong></span>
-          </li>
-          <input type="submit" class="btn btn-success" value="Finalizar compra" onClick="final()">
-          <?php
-            echo"<script> 
-            function final(){
-              alert('Finalizado com sucesso!');
-              window.location.href='index.php';
-            }
-            </script>";
-            ?>
-          </li>
-        </ul>
-        </div>
+          <div class='produtos-preco' id='preco' name='preco'>R$ <span>$product_price</span></div>
+        </div>";
+      }
+      ?>
 </div>
+<div class="preco-final">
+    <?php
+    $select = "SELECT produtoId FROM `cart`";
+    $result = mysqli_query($connection, $select);
+    $total = mysqli_num_rows($result);
+
+    $sql = "SELECT SUM(preco) AS totalPreco FROM `cart`";
+    $final = mysqli_query($connection, $sql);
+    $linhas = mysqli_num_rows($final);
+    $linhas = mysqli_fetch_array($final);
+
+    $precoTotal = $linhas['totalPreco'];
+
+    echo "<ul class='list-group'>
+    <form method='POST' action='emptyCart.php'>
+      <li class='list-group-item d-flex justify-content-between align-items-center'>
+        Quantidade de itens:
+        <span><strong>$total</strong></span>
+      </li>
+      <li class='list-group-item d-flex justify-content-between align-items-center'>
+        Valor total:
+        <span ><strong>R$ $precoTotal</strong></span>
+      </li>
+      <input type='submit' name='submit' class='btn btn-success' value='Finalizar compra'>
+      </li>
+      </form>          
+      </ul>";
+    ?>
+</div>
+</div>
+
+
 
 </body>
 </html>
