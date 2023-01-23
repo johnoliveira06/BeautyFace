@@ -17,8 +17,9 @@ if(empty($dados['email'])){
     if(isset($_POST['submit'])){
         $email = $_POST['email'];
         $senha = $_POST['senha'];
+        $hash =hash('sha256', $senha);
 
-        $sql_query = "SELECT * FROM `users` WHERE email='$email'";
+        $sql_query = "SELECT * FROM `users` WHERE email='$email' AND senha='$hash'";
          $result=mysqli_query($connection, $sql_query);
          $row_count=mysqli_num_rows($result);
          if($row_count>0){

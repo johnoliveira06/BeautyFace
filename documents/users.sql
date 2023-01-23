@@ -1,6 +1,6 @@
-CREATE DATABASE 'beautyface';
+CREATE DATABASE `beautyface`;
 
-USE 'beautyface';
+USE `beautyface`;
 
 CREATE TABLE IF NOT EXISTS `beautyface`.`users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,

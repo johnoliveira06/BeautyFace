@@ -42,25 +42,28 @@
       include_once('connect.php');
         $select = "SELECT * FROM `cart`";
         $result = mysqli_query($connection, $select);
+
+
         while($row = mysqli_fetch_assoc($result)){
           $product_id = $row['id'];
           $product_name=$row['nome'];
           $product_price=$row['preco'];
+          $product_image=$row['imagem'];
+
           
           echo "<div class='produtos-item'>
           <img
-          src='./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg'
+          src='./assets/images/$product_image'
           alt='Produto'
           />
+          <input type='hidden' name='produtoid' value='$product_id'>
+          <input id='nome' name='nome' type='hidden' value='$product_name'>
           <p>$product_name</p>
-          <div>
-          <label for='quantity'><strong>Quantidade:</strong></label>
-          <input type='number' id='quantity' name='quantity' min='1' max='50' step='1' value='1'>
-        </div>
-          <div class='produtos-preco' id='preco' name='preco'>R$ <span>$product_price</span></div>
+          <div class='produtos-preco'>R$ <span>$product_price</span></div>
+          <input class='produtos-preco' id='preco' name='preco' type='hidden' value='$product_price'>
         </div>";
       }
-      ?>
+      ?>  
 </div>
 <div class="preco-final">
     <?php

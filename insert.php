@@ -4,7 +4,7 @@ include_once ('connect.php');
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-$hash_senha =password_hash($senha, PASSWORD_DEFAULT);
+$hash_senha = hash('sha256', $senha);
 $cidade = $_POST['cidade'];
 
 if(empty($nome)){

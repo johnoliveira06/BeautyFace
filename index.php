@@ -34,6 +34,7 @@
       </div>
     </header>
     <section class="banner">
+      <?php   include_once 'verificaLogin.php'; ?>
       <img src="./assets/images/banner.jpg" alt="Banner" />
     </section>
     <section class="produtos">
@@ -41,31 +42,31 @@
         <div class="produtos-info">
           <h2>PROMOÇÃO</h2>
           <p>9 produtos</p>
-          
         </div>
       </div>
-      <!-- <input id='submit' type='submit' name='submit' value='Cadastrar'> -->
-      
       <div class="lista-produtos">
         <?php
 
-include_once('connect.php');
-$select = "SELECT * FROM `produtos`";
+        include_once('connect.php');
+        $select = "SELECT * FROM `produtos`";
         $result = mysqli_query($connection, $select);
         while($row = mysqli_fetch_assoc($result)){
           $product_id = $row['id'];
           $product_name=$row['nome'];
           $product_price=$row['preco'];
+          $product_image=$row['imagem'];
           
           echo "<div class='produtos-item'>
           <form method='POST' action='insert_cart.php'>
+          <input type='hidden' name='produtoid' value='$product_id'>
           <img
-          src='./assets/images/pharma-hemp-complex-yVAXSK6zFIM-unsplash.jpg'
+          src='./assets/images/$product_image'
           alt='Produto'
           />
+          <input type='hidden' name='image' value='$product_image'>
           <p>$product_name</p>
           <input id='nome' name='nome' type='hidden' value='$product_name'>
-          <div class='produtos-preco' id='preco' name='preco'>R$ <span>$product_price</span></div>
+          <div class='produtos-preco'>R$ <span>$product_price</span></div>
           <input class='produtos-preco' id='preco' name='preco' type='hidden' value='$product_price'>
           <button type='submit' name='submit' class='btn btn-outline-primary' >Adicionar ao carrinho</button>
           </form>
@@ -77,20 +78,11 @@ $select = "SELECT * FROM `produtos`";
       <div class="newsletter-conteudo">
         <div class="newsletter-links">
           <ul>
-            <li><a href="#">Contato</a></li>
+            <li><a href="./contato.php">Contato</a></li>
             <li><a href="#">Termos de serviço</a></li>
             <li><a href="#">Política de privacidade</a></li>
             <li><a href="#">Cancelamento, troca e reembolso</a></li>
           </ul>
-        </div>
-        <div class="newsletter-form">
-          <label for="input">Newsletter</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Digite seu melhor e-mail"  aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button type="button" class="btn btn-success">Inscrever</button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
