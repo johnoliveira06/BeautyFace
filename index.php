@@ -19,7 +19,7 @@
       <nav class="navbar navbar-light header-logo">
         <a class="navbar-brand" href="#">
           <img src="./assets/icons/star.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-          <a href="#">Beauty Face</a>
+          <a href="index.php">Beauty Face</a>
         </a>
       </nav>
       <div class="header-nav">

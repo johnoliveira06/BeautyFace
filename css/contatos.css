@@ -1,0 +1,38 @@
+body{
+  background-color: #98b6d4;
+}
+@media (min-width: 960px) {
+    main {
+       column-count: 3;
+    }
+  }
+  main {    
+    max-width: 1200px;
+    margin: 200px auto;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 2rem;
+    padding: 10px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 1em;
+    padding: 0 10px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .contatoTxt{
+    font-size: 20px;
+  }
+  section {
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #5CA720;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 17rem;
+    height: 17rem;
+    text-align: center;
+  }
