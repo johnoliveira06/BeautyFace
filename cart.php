@@ -82,13 +82,14 @@
     $precoTotal = $linhas['totalPreco'];
 
     echo "<ul class='list-group'>
-    <form method='POST' action='finalizar.php'>
+    <form method='POST' action='finalizarCompra.php'>
       <li class='list-group-item d-flex justify-content-between align-items-center'>
         Quantidade de itens:
         <span><strong>$total</strong></span>
-      </li>
-      <li class='list-group-item d-flex justify-content-between align-items-center'>
+        </li>
+        <li class='list-group-item d-flex justify-content-between align-items-center'>
         Valor total:
+        <input type='hidden' name='total' value='$precoTotal'>
         <span ><strong>R$ $precoTotal</strong></span>
       </li>
       <input type='submit' name='submit' class='btn btn-success' value='Finalizar compra'>
