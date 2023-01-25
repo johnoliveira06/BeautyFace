@@ -52,6 +52,7 @@
 
           
           echo "<div class='produtos-item'>
+          <form method='POST' action='removeItem.php'>
           <img
           src='./assets/images/$product_image'
           alt='Produto'
@@ -61,6 +62,8 @@
           <p>$product_name</p>
           <div class='produtos-preco'>R$ <span>$product_price</span></div>
           <input class='produtos-preco' id='preco' name='preco' type='hidden' value='$product_price'>
+          <button type='submit' name='apagar' class='btn btn-outline-danger' >Remover do carrinho</button>
+          </form>
         </div>";
       }
       ?>  
@@ -79,7 +82,7 @@
     $precoTotal = $linhas['totalPreco'];
 
     echo "<ul class='list-group'>
-    <form method='POST' action='emptyCart.php'>
+    <form method='POST' action='finalizar.php'>
       <li class='list-group-item d-flex justify-content-between align-items-center'>
         Quantidade de itens:
         <span><strong>$total</strong></span>
