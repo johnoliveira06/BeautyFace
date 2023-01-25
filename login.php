@@ -50,6 +50,10 @@
 
       <form class="login-form" method="POST" action="loginValidate.php">
   <div class="form-group">
+    <label>Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" autocomplete="off">
+  </div>
+  <div class="form-group">
     <label>Email</label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off">
   </div>

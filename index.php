@@ -24,6 +24,7 @@
       </nav>
       <div class="header-nav">
         <ul>
+          <?php   include_once 'verificaLogin.php'; ?>
           <li>
             <a href="./cadastro.php"><img src="./assets/icons/login.svg" alt="Login" /></a>
           </li>
@@ -34,7 +35,7 @@
       </div>
     </header>
     <section class="banner">
-      <?php   include_once 'verificaLogin.php'; ?>
+      
       <img src="./assets/images/banner.jpg" alt="Banner" />
     </section>
     <section class="produtos">
@@ -79,9 +80,7 @@
         <div class="newsletter-links">
           <ul>
             <li><a href="./contato.php">Contato</a></li>
-            <li><a href="#">Termos de serviço</a></li>
-            <li><a href="#">Política de privacidade</a></li>
-            <li><a href="#">Cancelamento, troca e reembolso</a></li>
+            <li><a href="./termos.php">Termos de serviço, política de privacidade,<br>cancelamento, troca e reembolso</a></li>
           </ul>
         </div>
       </div>
