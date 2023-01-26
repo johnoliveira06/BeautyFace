@@ -23,6 +23,11 @@ while ($row = mysqli_fetch_array($result)) {
   $delete = "DELETE FROM `cart`";
   $deletado = mysqli_query($connection, $delete);
 }
+}else {
+  echo"<script> 
+  alert('Você não está logado!');
+  window.location.href='index.php';
+</script>";
 }
 
 ?>
