@@ -6,12 +6,12 @@ CREATE TABLE IF NOT EXISTS produtos (
   PRIMARY KEY (id))
 ENGINE = InnoDB;
 
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL, 'Sabonete','20, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Shampoo','15, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Kit Shampoo','30, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Shampoo','20, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Creme Facial','25, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Perfume','80, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Protetor Solar','35, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Kit Creme','70, 00','');
-INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Anti Rugas','40, 00','');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL, 'Sabonete','20, 00','sabonete.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Shampoo','15, 00','shampoo.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Kit Shampoo','30, 00','kitShampoo.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Shampoo','20, 00','shampoo2.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Creme Facial','25, 00','cremeFacial.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Perfume','80, 00','perfume.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Protetor Solar','35, 00','protetorSolar.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Kit Creme','70, 00','kitCreme.jpg');
+INSERT INTO `produtos`(`id`, `nome`, `preco`, `imagem`) VALUES (NULL,'Anti Rugas','40, 00','antiRugas.jpg');
