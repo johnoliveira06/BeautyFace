@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS detalhes_compras (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  produto VARCHAR(255) NOT NULL,
+  valorUnitario VARCHAR(255) NOT NULL,
+  valorTotal VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id))
+ENGINE = InnoDB;

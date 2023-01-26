@@ -79,6 +79,18 @@
     $linhas = mysqli_num_rows($final);
     $linhas = mysqli_fetch_array($final);
 
+    $nomes = "SELECT GROUP_CONCAT(`nome` SEPARATOR ', ') AS nomes FROM `cart`";
+    $confirm = mysqli_query($connection, $nomes);
+    $lista = mysqli_fetch_array($confirm);
+
+    $precos = "SELECT GROUP_CONCAT(`preco` SEPARATOR '; ') AS precos FROM `cart`";
+    $accept = mysqli_query($connection, $precos);
+    $prices = mysqli_fetch_array($accept);
+
+    $listaPrecos = $prices['precos'];
+
+    $listaNomes = $lista['nomes'];
+
     $precoTotal = $linhas['totalPreco'];
 
     echo "<ul class='list-group'>
@@ -90,6 +102,8 @@
         <li class='list-group-item d-flex justify-content-between align-items-center'>
         Valor total:
         <input type='hidden' name='total' value='$precoTotal'>
+        <input id='nome' name='nome' type='hidden' value='$listaNomes'>
+        <input class='produtos-preco' id='preco' name='preco' type='hidden' value='$listaPrecos'>
         <span ><strong>R$ $precoTotal</strong></span>
       </li>
       <input type='submit' name='submit' class='btn btn-success' value='Finalizar compra'>
