@@ -1,6 +1,8 @@
 CREATE TABLE IF NOT EXISTS compras (
-    id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    userId INT(11) NOT NULL,
-    total varchar(255) NOT NULL,
-    CONSTRAINT userId FOREIGN KEY (userId) REFERENCES users (id)
-);
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  userId INT(11) NOT NULL,
+  total VARCHAR(255) NOT NULL,
+  data date NOT NULL,
+  CONSTRAINT userId FOREIGN KEY (userId) REFERENCES users (id),
+  PRIMARY KEY (id))
+ENGINE = InnoDB;
